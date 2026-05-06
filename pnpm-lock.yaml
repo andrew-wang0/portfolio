@@ -43,6 +43,9 @@ importers:
 
   apps/portfolio:
     dependencies:
+      "@phosphor-icons/react":
+        specifier: 2.1.10
+        version: 2.1.10(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       "@radix-ui/react-scroll-area":
         specifier: 1.2.10
         version: 1.2.10(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -948,6 +951,16 @@ packages:
         integrity: sha512-xhfYPXoV5Dy4UkY0D+v2KkwvnDfiA/8Mt3sWCGI/hM03NsYIH8ZaG6QzS9x7pje5vHZBZJ2v6VRFVTWACnqcmQ==,
       }
     engines: { node: ^16.14.0 || >=18.0.0 }
+
+  "@phosphor-icons/react@2.1.10":
+    resolution:
+      {
+        integrity: sha512-vt8Tvq8GLjheAZZYa+YG/pW7HDbov8El/MANW8pOAz4eGxrwhnbfrQZq0Cp4q8zBEu8NIhHdnr+r8thnfRSNYA==,
+      }
+    engines: { node: ">=10" }
+    peerDependencies:
+      react: ">= 16.8"
+      react-dom: ">= 16.8"
 
   "@pkgjs/parseargs@0.11.0":
     resolution:
@@ -5828,6 +5841,11 @@ snapshots:
   "@npmcli/promise-spawn@7.0.2":
     dependencies:
       which: 4.0.0
+
+  "@phosphor-icons/react@2.1.10(react-dom@19.2.5(react@19.2.5))(react@19.2.5)":
+    dependencies:
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
 
   "@pkgjs/parseargs@0.11.0":
     optional: true

@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { ArrowsClockwiseIcon, MapPinIcon } from "@phosphor-icons/react/ssr";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import Image from "next/image";
@@ -56,7 +57,8 @@ export default function RootLayout({
             <div
               className={cn(
                 "absolute top-3 right-3 flex items-center gap-x-3",
-                "[&_svg]:hover:text-tan [&_svg]:text-background [&_svg]:size-9 [&_svg]:duration-200",
+                "[&_svg]:hover:text-foreground [&_svg]:text-background [&_svg]:duration-200",
+                "[&_svg]:size-7 [&_svg]:sm:size-9",
               )}
             >
               <Link href="https://devpost.com/andrew-wang0" target="_blank" title="Devpost">
@@ -72,6 +74,28 @@ export default function RootLayout({
               >
                 <FaLinkedin />
               </Link>
+            </div>
+
+            <div className="absolute top-3 left-3">
+              <button
+                className={cn(
+                  "cursor-pointer rounded-lg p-2 backdrop-blur-sm",
+                  "group flex items-center gap-x-1 [&_svg]:size-5",
+                )}
+              >
+                <span className="relative inline-flex">
+                  <MapPinIcon
+                    weight="fill"
+                    className="transition-opacity duration-200 ease-in-out group-hover:opacity-0"
+                  />
+
+                  <ArrowsClockwiseIcon
+                    weight="fill"
+                    className="absolute inset-0 opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100"
+                  />
+                </span>
+                <span className="mix-blend-difference">Zion National Park</span>
+              </button>
             </div>
           </div>
 
