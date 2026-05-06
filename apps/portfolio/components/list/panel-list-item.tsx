@@ -68,8 +68,8 @@ export function PanelListItem({
               fill
               className={cn(
                 "size-full rounded-xs object-cover object-center",
-                "transition-[scale,filter] duration-[1750ms,200ms] ease-in-out",
-                "group-hover/image:scale-[1.02] group-hover/image:brightness-75",
+                "transition-[filter] duration-200 ease-in-out",
+                "group-hover/image:brightness-75",
                 imageClassName,
               )}
             />

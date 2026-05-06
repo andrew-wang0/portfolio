@@ -38,7 +38,7 @@ export default function RootLayout({
         <ScrollArea vertical className="size-full" type="always">
           <div className="relative h-[33dvh] w-full">
             <Image
-              src="/backdrop/image5.jpg"
+              src="/backdrop/zion.jpg"
               alt="backdrop"
               fill
               className={cn(
