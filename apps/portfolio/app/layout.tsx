@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import { Geist } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -16,6 +17,9 @@ export const metadata: Metadata = {
   title: "Andrew Wang",
   description: "Andrew Wang's Portfolio",
 };
+const geist = Geist({
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -29,7 +33,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en">
+    <html lang="en" className={geist.className}>
       <body className="animate-in fade-in h-dvh overflow-hidden antialiased duration-500">
         <ScrollArea vertical className="size-full" type="always">
           <div className="relative h-[33dvh] w-full">

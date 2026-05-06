@@ -39,7 +39,7 @@ export function PanelListItem({
             rel="noreferrer"
             className={cn(
               "text-lg underline-offset-2",
-              "relative inline-block after:absolute after:bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-[150ms] hover:after:scale-x-100",
+              "relative inline-block after:absolute after:bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-150 hover:after:scale-x-100",
             )}
           >
             {title}
@@ -67,11 +67,13 @@ export function PanelListItem({
               alt={title}
               fill
               className={cn(
-                "size-full rounded-xs object-cover object-center transition-all duration-200 ease-in-out group-hover/image:brightness-75",
+                "size-full rounded-xs object-cover object-center",
+                "transition-[scale,filter] duration-[1750ms,200ms] ease-in-out",
+                "group-hover/image:scale-[1.02] group-hover/image:brightness-75",
                 imageClassName,
               )}
             />
-          </div>{" "}
+          </div>
         </Link>
       ) : (
         <div className="group/image order-1 aspect-video w-full overflow-hidden sm:order-2">
@@ -85,7 +87,7 @@ export function PanelListItem({
                 imageClassName,
               )}
             />
-          </div>{" "}
+          </div>
         </div>
       )}
     </div>
