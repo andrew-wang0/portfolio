@@ -5,7 +5,7 @@ import React from "react";
 
 import { cn } from "@/lib/util/cn";
 
-export function BackgroundTriggerButton() {
+export function BackgroundTriggerButton({ name, onClick }: { name: string; onClick: () => void }) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const pointerPositionRef = React.useRef<{ x: number; y: number } | null>(null);
   const frameRef = React.useRef<number | null>(null);
@@ -88,6 +88,8 @@ export function BackgroundTriggerButton() {
       onPointerLeave={() => {
         setIsHovered(false);
       }}
+      onClick={onClick}
+      type="button"
     >
       <span className="relative inline-flex">
         <MapPinIcon
@@ -104,7 +106,7 @@ export function BackgroundTriggerButton() {
         />
       </span>
 
-      <span className="mix-blend-difference">Zion National Park</span>
+      <span className="mix-blend-difference">{name}</span>
     </button>
   );
 }

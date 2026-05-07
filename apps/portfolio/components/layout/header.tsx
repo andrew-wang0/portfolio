@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -5,9 +7,19 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiDevpost } from "react-icons/si";
 
 import { BackgroundTriggerButton } from "@/components/layout/background-trigger-button";
+import { backgrounds } from "@/components/layout/backgrounds";
 import { cn } from "@/lib/util/cn";
 
 export function Header() {
+  const [backgroundIndex, setBackgroundIndex] = React.useState(0);
+  const background = backgrounds[backgroundIndex];
+
+  const cycleBackground = () => {
+    setBackgroundIndex(
+      (currentBackgroundIndex) => (currentBackgroundIndex + 1) % backgrounds.length,
+    );
+  };
+
   return (
     <header
       className={cn(
@@ -16,11 +28,12 @@ export function Header() {
       )}
     >
       <Image
-        src="/backdrop/zion.jpg"
-        alt="Zion National Park backdrop"
+        src={`/backdrop/${background.file}`}
+        alt={`${background.name} backdrop`}
         fill
         priority
-        className="pointer-events-none object-cover object-[50%_10%] select-none"
+        className="pointer-events-none object-cover select-none"
+        style={{ objectPosition: background.objectPosition }}
       />
 
       <div
@@ -63,7 +76,7 @@ export function Header() {
       </div>
 
       <div className="absolute top-3 left-3 max-lg:hidden">
-        <BackgroundTriggerButton />
+        <BackgroundTriggerButton name={background.name} onClick={cycleBackground} />
       </div>
     </header>
   );

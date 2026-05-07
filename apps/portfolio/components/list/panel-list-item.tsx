@@ -72,6 +72,7 @@ export function PanelListItem({
                 "group-hover/image:brightness-75",
                 imageClassName,
               )}
+              sizes="100vw"
             />
           </div>
         </Link>
