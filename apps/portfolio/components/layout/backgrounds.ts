@@ -6,14 +6,19 @@ type Background = {
 
 export const backgrounds: Background[] = [
   {
-    name: "Zion National Park",
+    name: "Zion Natl. Park",
     file: "zion.jpg",
     objectPosition: "50% 10%",
   },
   {
-    name: "Stevens Lake",
-    file: "stevens.jpg",
-    objectPosition: "50% 52%",
+    name: "Garland Ranch",
+    file: "garland.jpg",
+    objectPosition: "50% 50%",
+  },
+  {
+    name: "Henry Cowell Redwoods State Park",
+    file: "cowell.jpg",
+    objectPosition: "50% 60%",
   },
   {
     name: "Lake 22",
@@ -21,8 +26,33 @@ export const backgrounds: Background[] = [
     objectPosition: "50% 20%",
   },
   {
-    name: "Donner Pass",
+    name: "Bridal Veil Falls",
+    file: "falls.jpg",
+    objectPosition: "50% 20%",
+  },
+  {
+    name: "Mt. Baker - Snoqualmie Natl. Forest",
+    file: "snoqualmie.jpg",
+    objectPosition: "50% 80%",
+  },
+  {
+    name: "Stevens Lake",
+    file: "stevens.jpg",
+    objectPosition: "50% 52%",
+  },
+  {
+    name: "Carmel State Beach",
+    file: "beach.jpg",
+    objectPosition: "50% 37%",
+  },
+  {
+    name: "Donner Pass Tunnels",
     file: "donner.jpg",
     objectPosition: "50% 55%",
+  },
+  {
+    name: "Lake Tahoe - Night",
+    file: "tahoe.jpg",
+    objectPosition: "50% 50%",
   },
 ];
