@@ -76,7 +76,9 @@ export function Header() {
         <div
           className={cn(
             "background-muted flex shrink-0 items-center gap-x-3 transition-all duration-300",
-            "[&_svg]:text-background [&_svg]:hover:text-foreground [&_svg]:duration-200",
+            "[&_a]:rounded-sm [&_a]:outline-offset-2",
+            "[&_a:focus-visible_svg]:text-foreground [&_svg]:text-background",
+            "[&_svg]:hover:text-foreground [&_svg]:duration-200",
             "[&_svg]:size-7 [&_svg]:sm:size-9",
           )}
         >

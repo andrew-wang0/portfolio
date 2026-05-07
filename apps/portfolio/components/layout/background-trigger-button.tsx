@@ -9,8 +9,11 @@ import { cn } from "@/lib/util/cn";
 export function BackgroundTriggerButton({ name, onClick }: { name: string; onClick: () => void }) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const pointerPositionRef = React.useRef<{ x: number; y: number } | null>(null);
+  const isPointerFocusRef = React.useRef(false);
   const frameRef = React.useRef<number | null>(null);
   const [isHovered, setIsHovered] = React.useState(false);
+  const [isFocused, setIsFocused] = React.useState(false);
+  const isActive = isHovered || isFocused;
 
   const syncHoveredState = React.useCallback(() => {
     const button = buttonRef.current;
@@ -48,7 +51,7 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
   }, []);
 
   React.useEffect(() => {
-    if (!isHovered) {
+    if (!isActive) {
       return;
     }
 
@@ -68,28 +71,42 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
       window.removeEventListener("scroll", handleWindowScroll, true);
       window.removeEventListener("wheel", handleWindowWheel);
     };
-  }, [isHovered, scheduleHoveredStateSync]);
+  }, [isActive, scheduleHoveredStateSync]);
 
   return (
     <motion.button
       ref={buttonRef}
-      data-hovered={isHovered ? "true" : "false"}
+      data-hovered={isActive ? "true" : "false"}
       className={cn(
         "background-trigger flex max-w-full cursor-pointer items-center overflow-hidden",
         "rounded-lg p-2 backdrop-blur-sm",
         "[&_svg]:size-5",
       )}
-      animate={{ width: isHovered ? "100%" : "auto" }}
+      animate={{ width: isActive ? "100%" : "auto" }}
       transition={{ duration: 0.4, ease: "easeIn" }}
       onPointerEnter={(event) => {
         pointerPositionRef.current = { x: event.clientX, y: event.clientY };
         setIsHovered(true);
+      }}
+      onPointerDown={() => {
+        isPointerFocusRef.current = true;
       }}
       onPointerMove={(event) => {
         pointerPositionRef.current = { x: event.clientX, y: event.clientY };
       }}
       onPointerLeave={() => {
         setIsHovered(false);
+      }}
+      onPointerUp={(event) => {
+        pointerPositionRef.current = { x: event.clientX, y: event.clientY };
+        scheduleHoveredStateSync();
+      }}
+      onFocus={() => {
+        setIsFocused(!isPointerFocusRef.current);
+        isPointerFocusRef.current = false;
+      }}
+      onBlur={() => {
+        setIsFocused(false);
       }}
       onClick={onClick}
       type="button"
@@ -98,14 +115,14 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
         <span className="relative inline-flex">
           <MapPinIcon
             weight="fill"
-            className={cn("transition-opacity duration-200", isHovered && "opacity-0")}
+            className={cn("transition-opacity duration-200", isActive && "opacity-0")}
           />
 
           <ArrowsClockwiseIcon
             weight="fill"
             className={cn(
               "absolute inset-0 opacity-0 transition-opacity duration-200",
-              isHovered && "opacity-100",
+              isActive && "opacity-100",
             )}
           />
         </span>
