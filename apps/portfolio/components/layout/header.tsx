@@ -27,8 +27,8 @@ export function Header() {
         className={cn(
           "pointer-events-none absolute inset-0",
           "to-background bg-linear-to-b from-transparent from-20%",
-          "transition-opacity duration-500",
-          "[.background-root:has(.background-trigger[data-hovered=true])_&]:opacity-0",
+          "transition-[--tw-gradient-from-position] duration-500",
+          "[.background-root:has(.background-trigger[data-hovered=true])_&]:from-100%",
         )}
       />
 
