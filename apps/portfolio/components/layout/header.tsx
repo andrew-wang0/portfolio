@@ -13,6 +13,11 @@ import { cn } from "@/lib/util/cn";
 export function Header() {
   const [backgroundIndex, setBackgroundIndex] = React.useState(0);
   const background = backgrounds[backgroundIndex];
+  const eagerBackgroundIndexes = new Set([
+    backgroundIndex,
+    (backgroundIndex + 1) % backgrounds.length,
+    (backgroundIndex + 2) % backgrounds.length,
+  ]);
 
   const cycleBackground = () => {
     setBackgroundIndex(
@@ -27,14 +32,22 @@ export function Header() {
         "[.background-root:has(.background-trigger[data-hovered=true])_&]:h-dvh",
       )}
     >
-      <Image
-        src={`/backdrop/${background.file}`}
-        alt={`${background.name} backdrop`}
-        fill
-        priority
-        className="pointer-events-none object-cover select-none"
-        style={{ objectPosition: background.objectPosition }}
-      />
+      {backgrounds.map((item, index) => (
+        <Image
+          key={item.file}
+          src={`/backdrop/${item.file}`}
+          alt={`${item.name} backdrop`}
+          fill
+          priority={index === 0}
+          loading={index === 0 ? undefined : eagerBackgroundIndexes.has(index) ? "eager" : "lazy"}
+          className={cn(
+            "pointer-events-none object-cover transition-opacity duration-300 select-none",
+            index === backgroundIndex ? "opacity-100" : "opacity-0",
+          )}
+          style={{ objectPosition: item.objectPosition }}
+          aria-hidden={index !== backgroundIndex}
+        />
+      ))}
 
       <div
         className={cn(
