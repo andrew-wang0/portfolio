@@ -41,7 +41,7 @@ export function Header() {
           priority={index === 0}
           loading={index === 0 ? undefined : eagerBackgroundIndexes.has(index) ? "eager" : "lazy"}
           className={cn(
-            "pointer-events-none object-cover transition-opacity duration-300 select-none",
+            "pointer-events-none object-cover transition-opacity duration-250 select-none",
             index === backgroundIndex ? "opacity-100" : "opacity-0",
           )}
           style={{ objectPosition: item.objectPosition }}
@@ -68,28 +68,30 @@ export function Header() {
         <h1 className="text-7xl font-semibold max-lg:text-6xl max-sm:text-5xl">Andrew Wang</h1>
       </div>
 
-      <div
-        className={cn(
-          "background-muted absolute top-3 right-3 flex items-center gap-x-3 transition-all duration-300",
-          "[&_svg]:text-background [&_svg]:hover:text-foreground [&_svg]:duration-200",
-          "[&_svg]:size-7 [&_svg]:sm:size-9",
-        )}
-      >
-        <Link href="https://devpost.com/andrew-wang0" target="_blank" title="Devpost">
-          <SiDevpost />
-        </Link>
+      <div className="absolute inset-x-3 top-3 flex items-start gap-x-3 max-lg:justify-end">
+        <div className="flex-1 max-lg:hidden">
+          <BackgroundTriggerButton name={background.name} onClick={cycleBackground} />
+        </div>
 
-        <Link href="https://github.com/andrew-wang0" target="_blank" title="GitHub">
-          <FaGithub />
-        </Link>
+        <div
+          className={cn(
+            "background-muted flex shrink-0 items-center gap-x-3 transition-all duration-300",
+            "[&_svg]:text-background [&_svg]:hover:text-foreground [&_svg]:duration-200",
+            "[&_svg]:size-7 [&_svg]:sm:size-9",
+          )}
+        >
+          <Link href="https://devpost.com/andrew-wang0" target="_blank" title="Devpost">
+            <SiDevpost />
+          </Link>
 
-        <Link href="https://www.linkedin.com/in/andrew-wang0/" target="_blank" title="LinkedIn">
-          <FaLinkedin />
-        </Link>
-      </div>
+          <Link href="https://github.com/andrew-wang0" target="_blank" title="GitHub">
+            <FaGithub />
+          </Link>
 
-      <div className="absolute top-3 left-3 max-lg:hidden">
-        <BackgroundTriggerButton name={background.name} onClick={cycleBackground} />
+          <Link href="https://www.linkedin.com/in/andrew-wang0/" target="_blank" title="LinkedIn">
+            <FaLinkedin />
+          </Link>
+        </div>
       </div>
     </header>
   );

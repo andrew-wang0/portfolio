@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowsClockwiseIcon, MapPinIcon } from "@phosphor-icons/react";
+import { motion } from "motion/react";
 import React from "react";
 
 import { cn } from "@/lib/util/cn";
@@ -70,14 +71,16 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
   }, [isHovered, scheduleHoveredStateSync]);
 
   return (
-    <button
+    <motion.button
       ref={buttonRef}
       data-hovered={isHovered ? "true" : "false"}
       className={cn(
-        "background-trigger flex cursor-pointer items-center gap-x-1",
+        "background-trigger flex max-w-full cursor-pointer items-center overflow-hidden",
         "rounded-lg p-2 backdrop-blur-sm",
         "[&_svg]:size-5",
       )}
+      animate={{ width: isHovered ? "100%" : "auto" }}
+      transition={{ duration: 0.4, ease: "easeIn" }}
       onPointerEnter={(event) => {
         pointerPositionRef.current = { x: event.clientX, y: event.clientY };
         setIsHovered(true);
@@ -91,22 +94,24 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
       onClick={onClick}
       type="button"
     >
-      <span className="relative inline-flex">
-        <MapPinIcon
-          weight="fill"
-          className={cn("transition-opacity duration-200", isHovered && "opacity-0")}
-        />
+      <span className="inline-flex items-center gap-x-1 whitespace-nowrap">
+        <span className="relative inline-flex">
+          <MapPinIcon
+            weight="fill"
+            className={cn("transition-opacity duration-200", isHovered && "opacity-0")}
+          />
 
-        <ArrowsClockwiseIcon
-          weight="fill"
-          className={cn(
-            "absolute inset-0 opacity-0 transition-opacity duration-200",
-            isHovered && "opacity-100",
-          )}
-        />
+          <ArrowsClockwiseIcon
+            weight="fill"
+            className={cn(
+              "absolute inset-0 opacity-0 transition-opacity duration-200",
+              isHovered && "opacity-100",
+            )}
+          />
+        </span>
+
+        <span className="mix-blend-difference">{name}</span>
       </span>
-
-      <span className="mix-blend-difference">{name}</span>
-    </button>
+    </motion.button>
   );
 }

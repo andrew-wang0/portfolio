@@ -7,7 +7,7 @@ import { PanelListItem } from "@/components/list/panel-list-item";
 const panels: PanelListItemProps[] = [
   {
     imageRef: "/panels/spacex2.png",
-    dates: "January 2026",
+    dates: "January 2026 - February 2026",
     title: "SpaceX",
     description: "Engineered database migration pipelines for Starshield MVP",
     href: "https://www.spacex.com/starshield",
