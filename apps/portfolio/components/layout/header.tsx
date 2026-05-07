@@ -62,7 +62,7 @@ export function Header() {
         </Link>
       </div>
 
-      <div className="absolute top-3 left-3">
+      <div className="absolute top-3 left-3 max-lg:hidden">
         <BackgroundTriggerButton />
       </div>
     </header>
