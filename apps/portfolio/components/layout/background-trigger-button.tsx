@@ -116,10 +116,28 @@ export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props)
           />
         </span>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center">
           <span>{title}</span>
-          {subtitle && isHovered && (
-            <span className="text-[.95rem] font-light tracking-tight">{subtitle}</span>
+          {subtitle && (
+            <motion.span
+              aria-hidden={!isHovered}
+              className="inline-flex overflow-hidden text-[.95rem] font-light tracking-tight whitespace-nowrap"
+              initial={false}
+              animate={
+                isHovered
+                  ? { marginLeft: 8, opacity: 1, width: "auto" }
+                  : { marginLeft: 0, opacity: 0, width: 0 }
+              }
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <motion.span
+                initial={false}
+                animate={{ x: isHovered ? 0 : -16 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                {subtitle}
+              </motion.span>
+            </motion.span>
           )}
         </div>
       </span>
