@@ -1,8 +1,12 @@
-type Background = {
+import type { Icon } from "@phosphor-icons/react";
+import { FishSimpleIcon } from "@phosphor-icons/react";
+
+export type Background = {
   title: string;
   subtitle?: string;
   file: string;
   objectPosition?: string;
+  icon?: Icon;
 };
 
 export const backgrounds: Background[] = [
@@ -37,6 +41,12 @@ export const backgrounds: Background[] = [
     objectPosition: "50% 50%",
   },
   {
+    title: "McWay Falls",
+    subtitle: "Julia Pfeiffer Burns State Park",
+    file: "mcway.jpg",
+    objectPosition: "50% 70%",
+  },
+  {
     title: "Mt. Baker - Snoqualmie Natl. Forest",
     subtitle: "Washington",
     file: "snoqualmie.jpg",
@@ -61,10 +71,10 @@ export const backgrounds: Background[] = [
     objectPosition: "50% 20%",
   },
   {
-    title: "Big Sur River Gorge",
-    subtitle: "Pfeiffer Big Sur State Park",
-    file: "gorge.jpg",
-    objectPosition: "50% 40%",
+    title: "Lake of the Ozarks",
+    subtitle: "Missouri",
+    file: "ozark.jpg",
+    objectPosition: "50% 52%",
   },
   {
     title: "Petrified Forest Natl. Park",
@@ -73,10 +83,17 @@ export const backgrounds: Background[] = [
     objectPosition: "50% 80%",
   },
   {
-    title: "Lake of the Ozarks",
-    subtitle: "Missouri",
-    file: "ozark.jpg",
-    objectPosition: "50% 52%",
+    title: "Big Sur River Gorge",
+    subtitle: "Pfeiffer Big Sur State Park",
+    file: "gorge.jpg",
+    objectPosition: "50% 40%",
+  },
+  {
+    title: "Purple-Striped Jelly",
+    subtitle: "Monterey Bay Aquarium",
+    file: "jelly.jpg",
+    objectPosition: "50% 30%",
+    icon: FishSimpleIcon,
   },
   {
     title: "Bridal Veil Falls",
@@ -103,11 +120,6 @@ export const backgrounds: Background[] = [
     objectPosition: "50% 37%",
   },
   {
-    title: "Lake Tahoe - Night",
-    file: "tahoe.jpg",
-    objectPosition: "50% 50%",
-  },
-  {
     title: "Lake Michigan",
     subtitle: "Indiana Dunes Natl. Park",
     file: "indiana.jpg",
@@ -118,5 +130,10 @@ export const backgrounds: Background[] = [
     subtitle: "Sierra Nevada",
     file: "donner.jpg",
     objectPosition: "50% 55%",
+  },
+  {
+    title: "Lake Tahoe - Night",
+    file: "tahoe.jpg",
+    objectPosition: "50% 50%",
   },
 ];

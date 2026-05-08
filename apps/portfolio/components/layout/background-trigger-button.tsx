@@ -2,23 +2,17 @@ import { ArrowsClockwiseIcon, MapPinIcon } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import React from "react";
 
+import type { Background } from "@/components/layout/backgrounds";
 import { cn } from "@/lib/util/cn";
 
 type Props = {
-  title: string;
-  subtitle?: string;
+  background: Background;
   currentIndex: number;
   totalCount: number;
   onClick: () => void;
 };
 
-export function BackgroundTriggerButton({
-  title,
-  subtitle,
-  currentIndex,
-  totalCount,
-  onClick,
-}: Props) {
+export function BackgroundTriggerButton({ background, currentIndex, totalCount, onClick }: Props) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const pointerPositionRef = React.useRef<{ x: number; y: number } | null>(null);
   const frameRef = React.useRef<number | null>(null);
@@ -82,6 +76,8 @@ export function BackgroundTriggerButton({
     };
   }, [isHovered, scheduleHoveredStateSync]);
 
+  const Icon = background.icon ?? MapPinIcon;
+
   return (
     <motion.button
       ref={buttonRef}
@@ -112,7 +108,7 @@ export function BackgroundTriggerButton({
     >
       <span className="inline-flex min-w-0 items-center gap-x-1 whitespace-nowrap">
         <span className="relative inline-flex">
-          <MapPinIcon
+          <Icon
             weight="fill"
             className={cn("transition-opacity duration-200", isHovered && "opacity-0")}
           />
@@ -127,8 +123,8 @@ export function BackgroundTriggerButton({
         </span>
 
         <div className="flex items-end">
-          <span>{title}</span>
-          {subtitle && (
+          <span>{background.title}</span>
+          {background.subtitle && (
             <motion.span
               aria-hidden={!isHovered}
               className="inline-flex overflow-hidden text-[.95rem] font-light tracking-tight whitespace-nowrap"
@@ -145,7 +141,7 @@ export function BackgroundTriggerButton({
                 animate={{ x: isHovered ? 0 : -16 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                {subtitle}
+                {background.subtitle}
               </motion.span>
             </motion.span>
           )}

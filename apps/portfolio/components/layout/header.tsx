@@ -43,7 +43,7 @@ export function Header() {
           sizes="100vw"
           loading={index === 0 ? undefined : eagerBackgroundIndexes.has(index) ? "eager" : "lazy"}
           className={cn(
-            "pointer-events-none object-cover transition-opacity duration-250 select-none",
+            "pointer-events-none object-cover transition-opacity duration-500 select-none",
             index === backgroundIndex ? "opacity-100" : "opacity-0",
           )}
           style={{ objectPosition: item.objectPosition ?? "50% 50%" }}
@@ -73,8 +73,7 @@ export function Header() {
       <div className="absolute inset-x-3 top-3 flex items-start gap-x-3 max-lg:justify-end">
         <div className="flex-1 max-md:hidden">
           <BackgroundTriggerButton
-            title={background.title}
-            subtitle={background.subtitle}
+            background={background}
             currentIndex={backgroundIndex + 1}
             totalCount={backgrounds.length}
             onClick={cycleBackground}
