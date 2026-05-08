@@ -44,6 +44,7 @@ export const backgrounds: Background[] = [
   },
   {
     title: "Carmel State Beach",
+    subtitle: "Carmel, California",
     file: "beach.jpg",
     objectPosition: "50% 37%",
   },
