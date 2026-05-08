@@ -36,15 +36,16 @@ export function Header() {
         <Image
           key={item.file}
           src={`/backdrop/${item.file}`}
-          alt={`${item.name} backdrop`}
+          alt={`${item.title} backdrop`}
           fill
           priority={index === 0}
+          unoptimized
           loading={index === 0 ? undefined : eagerBackgroundIndexes.has(index) ? "eager" : "lazy"}
           className={cn(
             "pointer-events-none object-cover transition-opacity duration-250 select-none",
             index === backgroundIndex ? "opacity-100" : "opacity-0",
           )}
-          style={{ objectPosition: item.objectPosition }}
+          style={{ objectPosition: item.objectPosition ?? "50% 50%" }}
           aria-hidden={index !== backgroundIndex}
         />
       ))}
@@ -69,8 +70,12 @@ export function Header() {
       </div>
 
       <div className="absolute inset-x-3 top-3 flex items-start gap-x-3 max-lg:justify-end">
-        <div className="flex-1 max-lg:hidden">
-          <BackgroundTriggerButton name={background.name} onClick={cycleBackground} />
+        <div className="flex-1 max-md:hidden">
+          <BackgroundTriggerButton
+            title={background.title}
+            subtitle={background.subtitle}
+            handleClick={cycleBackground}
+          />
         </div>
 
         <div

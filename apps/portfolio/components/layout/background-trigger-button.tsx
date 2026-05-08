@@ -6,7 +6,9 @@ import React from "react";
 
 import { cn } from "@/lib/util/cn";
 
-export function BackgroundTriggerButton({ name, onClick }: { name: string; onClick: () => void }) {
+type Props = { title: string; subtitle?: string; handleClick: () => void };
+
+export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const pointerPositionRef = React.useRef<{ x: number; y: number } | null>(null);
   const isPointerFocusRef = React.useRef(false);
@@ -108,7 +110,7 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
       onBlur={() => {
         setIsFocused(false);
       }}
-      onClick={onClick}
+      onClick={handleClick}
       type="button"
     >
       <span className="inline-flex items-center gap-x-1 whitespace-nowrap">
@@ -127,7 +129,8 @@ export function BackgroundTriggerButton({ name, onClick }: { name: string; onCli
           />
         </span>
 
-        <span className="mix-blend-difference">{name}</span>
+        <span>{title}</span>
+        {subtitle && <span className="text-muted-foreground ml-0.5">{subtitle}</span>}
       </span>
     </motion.button>
   );
