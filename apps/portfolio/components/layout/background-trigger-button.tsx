@@ -155,7 +155,7 @@ export function BackgroundTriggerButton({ background, currentIndex, totalCount, 
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.2, ease: "easeInOut", delay: isHovered ? 0.5 : 0 }}
       >
-        {`#${currentIndex} / ${totalCount}`}
+        {currentIndex} / {totalCount}
       </motion.span>
     </motion.button>
   );

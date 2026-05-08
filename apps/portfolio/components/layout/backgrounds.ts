@@ -120,12 +120,6 @@ export const backgrounds: Background[] = [
     objectPosition: "50% 37%",
   },
   {
-    title: "Lake Michigan",
-    subtitle: "Indiana Dunes Natl. Park",
-    file: "indiana.jpg",
-    objectPosition: "50% 57%",
-  },
-  {
     title: "Donner Pass Tunnels",
     subtitle: "Sierra Nevada",
     file: "donner.jpg",
@@ -135,5 +129,11 @@ export const backgrounds: Background[] = [
     title: "Lake Tahoe - Night",
     file: "tahoe.jpg",
     objectPosition: "50% 50%",
+  },
+  {
+    title: "Lake Michigan",
+    subtitle: "Indiana Dunes Natl. Park",
+    file: "indiana.jpg",
+    objectPosition: "50% 57%",
   },
 ];
