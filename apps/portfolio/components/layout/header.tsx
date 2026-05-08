@@ -39,7 +39,8 @@ export function Header() {
           alt={`${item.title} backdrop`}
           fill
           priority={index === 0}
-          unoptimized
+          quality={100}
+          sizes="100vw"
           loading={index === 0 ? undefined : eagerBackgroundIndexes.has(index) ? "eager" : "lazy"}
           className={cn(
             "pointer-events-none object-cover transition-opacity duration-250 select-none",
