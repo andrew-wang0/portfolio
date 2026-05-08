@@ -44,7 +44,7 @@ export const backgrounds: Background[] = [
     title: "McWay Falls",
     subtitle: "Julia Pfeiffer Burns State Park",
     file: "mcway.jpg",
-    objectPosition: "50% 70%",
+    objectPosition: "50% 68%",
   },
   {
     title: "Mt. Baker - Snoqualmie Natl. Forest",
