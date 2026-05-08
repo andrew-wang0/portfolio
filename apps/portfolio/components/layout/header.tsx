@@ -70,7 +70,14 @@ export function Header() {
         <h1 className="text-7xl font-semibold max-lg:text-6xl max-sm:text-5xl">Andrew Wang</h1>
       </div>
 
-      <div className="absolute inset-x-3 top-3 flex items-start gap-x-3 max-lg:justify-end">
+      <button
+        className="absolute inset-0 z-10 md:hidden"
+        type="button"
+        aria-label={`Show next background. Current background: ${background.title}`}
+        onClick={cycleBackground}
+      />
+
+      <div className="absolute inset-x-3 top-3 z-20 flex items-start gap-x-3 max-lg:justify-end">
         <div className="flex-1 max-md:hidden">
           <BackgroundTriggerButton
             background={background}
