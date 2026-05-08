@@ -1,14 +1,12 @@
-"use client";
-
 import { ArrowsClockwiseIcon, MapPinIcon } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import React from "react";
 
 import { cn } from "@/lib/util/cn";
 
-type Props = { title: string; subtitle?: string; handleClick: () => void };
+type Props = { title: string; subtitle?: string; onClick: () => void };
 
-export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props) {
+export function BackgroundTriggerButton({ title, subtitle, onClick }: Props) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const pointerPositionRef = React.useRef<{ x: number; y: number } | null>(null);
   const frameRef = React.useRef<number | null>(null);
@@ -97,7 +95,7 @@ export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props)
         pointerPositionRef.current = { x: event.clientX, y: event.clientY };
         scheduleHoveredStateSync();
       }}
-      onClick={handleClick}
+      onClick={onClick}
       type="button"
     >
       <span className="inline-flex items-center gap-x-1 whitespace-nowrap">
@@ -116,7 +114,7 @@ export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props)
           />
         </span>
 
-        <div className="flex items-center">
+        <div className="flex items-end">
           <span>{title}</span>
           {subtitle && (
             <motion.span

@@ -74,7 +74,7 @@ export function Header() {
           <BackgroundTriggerButton
             title={background.title}
             subtitle={background.subtitle}
-            handleClick={cycleBackground}
+            onClick={cycleBackground}
           />
         </div>
 
