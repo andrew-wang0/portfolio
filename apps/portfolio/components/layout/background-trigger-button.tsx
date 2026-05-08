@@ -128,12 +128,12 @@ export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props)
                   ? { marginLeft: 8, opacity: 1, width: "auto" }
                   : { marginLeft: 0, opacity: 0, width: 0 }
               }
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <motion.span
                 initial={false}
                 animate={{ x: isHovered ? 0 : -16 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 {subtitle}
               </motion.span>
