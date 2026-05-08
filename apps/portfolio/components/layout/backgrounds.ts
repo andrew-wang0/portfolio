@@ -16,7 +16,7 @@ export const backgrounds: Background[] = [
     title: "Grand Tetons",
     subtitle: "Wyoming",
     file: "tetons.jpg",
-    objectPosition: "50% 55%",
+    objectPosition: "50% 57%",
   },
   {
     title: "Cathedral Redwoods",
