@@ -14,31 +14,49 @@ export const backgrounds: Background[] = [
   },
   {
     title: "Garland Ranch",
+    subtitle: "Santa Lucia Mountains",
     file: "garland.jpg",
     objectPosition: "50% 50%",
   },
   {
-    title: "Henry Cowell Redwoods State Park",
+    title: "Cathedral Redwoods",
+    subtitle: "Henry Cowell Redwoods State Park",
     file: "cowell.jpg",
     objectPosition: "50% 60%",
   },
   {
-    title: "Lake 22",
-    file: "twentytwo.jpg",
-    objectPosition: "50% 20%",
-  },
-  {
-    title: "Bridal Veil Falls",
-    file: "falls.jpg",
-    objectPosition: "50% 20%",
-  },
-  {
     title: "Mt. Baker - Snoqualmie Natl. Forest",
+    subtitle: "Washington",
     file: "snoqualmie.jpg",
     objectPosition: "50% 80%",
   },
   {
+    title: "Donner Lake",
+    subtitle: "Sierra Nevada",
+    file: "donner-lake.jpg",
+    objectPosition: "50% 70%",
+  },
+  {
+    title: "Lake 22",
+    subtitle: "Washington",
+    file: "twentytwo.jpg",
+    objectPosition: "50% 20%",
+  },
+  {
+    title: "Grand Tetons",
+    subtitle: "Wyoming",
+    file: "tetons.jpg",
+    objectPosition: "50% 55%",
+  },
+  {
+    title: "Bridal Veil Falls",
+    subtitle: "Washington",
+    file: "falls.jpg",
+    objectPosition: "50% 20%",
+  },
+  {
     title: "Stevens Lake",
+    subtitle: "Idaho Panhandle Natl. Forest",
     file: "stevens.jpg",
     objectPosition: "50% 52%",
   },
@@ -50,6 +68,7 @@ export const backgrounds: Background[] = [
   },
   {
     title: "Donner Pass Tunnels",
+    subtitle: "Sierra Nevada",
     file: "donner.jpg",
     objectPosition: "50% 55%",
   },

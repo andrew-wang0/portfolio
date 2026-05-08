@@ -116,8 +116,12 @@ export function BackgroundTriggerButton({ title, subtitle, handleClick }: Props)
           />
         </span>
 
-        <span>{title}</span>
-        {subtitle && <span className="text-muted-foreground ml-0.5 font-light">{subtitle}</span>}
+        <div className="flex items-center space-x-2">
+          <span>{title}</span>
+          {subtitle && isHovered && (
+            <span className="text-[.95rem] font-light tracking-tight">{subtitle}</span>
+          )}
+        </div>
       </span>
     </motion.button>
   );
