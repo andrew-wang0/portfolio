@@ -9,7 +9,7 @@ const panels: PanelListItemProps[] = [
     imageRef: "/panels/capy.jpg",
     dates: "November 2025",
     title: "Capybara Messages",
-    description: "Send wireless messages to your roommates via capybara",
+    description: "Send messages to your roommates via capybara",
     href: "https://youtu.be/t8XpoR306nQ",
     imageClassName: "object-[50%_20%]",
   },

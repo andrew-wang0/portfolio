@@ -27,25 +27,11 @@ const panels: PanelListItemProps[] = [
     href: "https://aws.amazon.com/dynamodb/",
   },
   {
-    imageRef: "/panels/mlrepo.png",
-    dates: "June 2024 — Present",
-    title: "UCI Machine Learning Repository",
-    description: "Full-stack application delivering open-source datasets to 3M+ users",
-    href: "https://archive-beta.ics.uci.edu/",
-  },
-  {
     imageRef: "/panels/nps.png",
     dates: "June 2024 — September 2024",
     title: "Naval Postgraduate School",
     description: "Data analysis on maritime missile raid scenarios",
     href: "https://nps.edu/",
-  },
-  {
-    imageRef: "/panels/ase.png",
-    dates: "June 2023 — September 2023",
-    title: "Applied Solar Energy",
-    description: "Designed efficient database schemas for solar energy systems",
-    href: "https://appliedsolarenergy.com/",
   },
 ];
 

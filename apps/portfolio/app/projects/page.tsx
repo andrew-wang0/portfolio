@@ -7,6 +7,13 @@ import { PanelListItem } from "@/components/list/panel-list-item";
 
 const panels: PanelListItemProps[] = [
   {
+    imageRef: "/panels/mlrepo.png",
+    dates: "2024 — 2026",
+    title: "UCI Machine Learning Repository",
+    description: "Full-stack application delivering open-source datasets to 3M+ users",
+    href: "https://archive-beta.ics.uci.edu/",
+  },
+  {
     imageRef: "/panels/icssc.png",
     dates: "2023 — 2026",
     title: "ICS Student Council",
@@ -26,6 +33,13 @@ const panels: PanelListItemProps[] = [
     title: "Assessem",
     description: "CS assessment software for 500+ students at Monterey Peninsula College",
     href: "https://github.com/MPC-Rebold/assessments-laravel",
+  },
+  {
+    imageRef: "/panels/ase.png",
+    dates: "2023",
+    title: "Applied Solar Energy",
+    description: "Designed efficient database schemas for solar energy systems",
+    href: "https://appliedsolarenergy.com/",
   },
   {
     imageRef: "/panels/gez.png",
