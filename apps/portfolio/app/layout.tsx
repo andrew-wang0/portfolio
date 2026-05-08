@@ -44,7 +44,7 @@ export default function RootLayout({
               )}
             >
               <div className="space-y-1 text-lg text-pretty">
-                <p>I'm a full-stack developer passionate about building things that work.</p>
+                <p>Software engineer passionate about building things that work.</p>
                 <p>Currently studying computer science at UC Irvine.</p>
               </div>
 
