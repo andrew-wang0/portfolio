@@ -75,6 +75,8 @@ export function Header() {
           <BackgroundTriggerButton
             title={background.title}
             subtitle={background.subtitle}
+            currentIndex={backgroundIndex + 1}
+            totalCount={backgrounds.length}
             onClick={cycleBackground}
           />
         </div>

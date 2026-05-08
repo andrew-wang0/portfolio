@@ -4,9 +4,21 @@ import React from "react";
 
 import { cn } from "@/lib/util/cn";
 
-type Props = { title: string; subtitle?: string; onClick: () => void };
+type Props = {
+  title: string;
+  subtitle?: string;
+  currentIndex: number;
+  totalCount: number;
+  onClick: () => void;
+};
 
-export function BackgroundTriggerButton({ title, subtitle, onClick }: Props) {
+export function BackgroundTriggerButton({
+  title,
+  subtitle,
+  currentIndex,
+  totalCount,
+  onClick,
+}: Props) {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const pointerPositionRef = React.useRef<{ x: number; y: number } | null>(null);
   const frameRef = React.useRef<number | null>(null);
@@ -75,7 +87,7 @@ export function BackgroundTriggerButton({ title, subtitle, onClick }: Props) {
       ref={buttonRef}
       data-hovered={isHovered ? "true" : "false"}
       className={cn(
-        "background-trigger flex max-w-full cursor-pointer items-center overflow-hidden",
+        "background-trigger flex max-w-full cursor-pointer items-center gap-x-4 overflow-hidden",
         "rounded-lg p-2 backdrop-blur-sm",
         "[&_svg]:size-5",
       )}
@@ -98,7 +110,7 @@ export function BackgroundTriggerButton({ title, subtitle, onClick }: Props) {
       onClick={onClick}
       type="button"
     >
-      <span className="inline-flex items-center gap-x-1 whitespace-nowrap">
+      <span className="inline-flex min-w-0 items-center gap-x-1 whitespace-nowrap">
         <span className="relative inline-flex">
           <MapPinIcon
             weight="fill"
@@ -139,6 +151,16 @@ export function BackgroundTriggerButton({ title, subtitle, onClick }: Props) {
           )}
         </div>
       </span>
+
+      <motion.span
+        aria-hidden={!isHovered}
+        className={cn("ml-auto font-semibold whitespace-nowrap", { hidden: !isHovered })}
+        initial={false}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.2, ease: "easeInOut", delay: isHovered ? 0.5 : 0 }}
+      >
+        {`#${currentIndex} / ${totalCount}`}
+      </motion.span>
     </motion.button>
   );
 }
