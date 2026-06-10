@@ -1,6 +1,5 @@
 "use client";
 
-import { IslandIcon } from "@phosphor-icons/react/ssr";
 import React from "react";
 
 import { cn } from "@/lib/util/cn";
@@ -13,7 +12,6 @@ export function Footer() {
         "text-muted-foreground/75 space-x-2",
       )}
     >
-      <IslandIcon size={20} />
       <span>Andrew Wang</span>
     </footer>
   );

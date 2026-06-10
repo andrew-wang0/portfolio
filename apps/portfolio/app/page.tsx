@@ -7,28 +7,28 @@ import { PanelListItem } from "@/components/list/panel-list-item";
 const panels: PanelListItemProps[] = [
   {
     imageRef: "/panels/spacex2.png",
-    dates: "January 2026 - February 2026",
+    dates: "2026",
     title: "SpaceX",
     description: "Engineered database migration pipelines for Starshield MVP",
     href: "https://www.spacex.com/starshield",
   },
   {
     imageRef: "/panels/apl.png",
-    dates: "July 2025 — September 2025",
+    dates: "2025",
     title: "Johns Hopkins APL",
     description: "Developed UI features to support missile defense simulations",
     href: "https://www.jhuapl.edu/",
   },
   {
     imageRef: "/panels/aws.png",
-    dates: "April 2025 — July 2025",
+    dates: "2025",
     title: "Amazon Web Services",
     description: "Built high-concurrency cache architectures for DynamoDB in Rust",
     href: "https://aws.amazon.com/dynamodb/",
   },
   {
     imageRef: "/panels/nps.png",
-    dates: "June 2024 — September 2024",
+    dates: "2024",
     title: "Naval Postgraduate School",
     description: "Data analysis on maritime missile raid scenarios",
     href: "https://nps.edu/",

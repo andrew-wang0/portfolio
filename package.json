@@ -18,21 +18,21 @@
   },
   "prettier": "@packages/prettier-config",
   "devDependencies": {
-    "@commitlint/cli": "21.0.0",
-    "@commitlint/config-conventional": "21.0.0",
+    "@commitlint/cli": "21.0.2",
+    "@commitlint/config-conventional": "21.0.2",
     "@packages/eslint-config": "workspace:*",
     "@packages/prettier-config": "workspace:*",
     "@packages/typescript-config": "workspace:*",
-    "@types/node": "25.6.2",
+    "@types/node": "25.9.2",
     "eslint": "9.39.4",
     "husky": "9.1.7",
-    "lint-staged": "17.0.3",
-    "prettier": "3.8.3",
+    "lint-staged": "17.0.7",
+    "prettier": "3.8.4",
     "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@10.33.3",
+  "packageManager": "pnpm@11.5.2",
   "engines": {
     "node": ">=24",
-    "pnpm": "10.33.3"
+    "pnpm": "11.5.2"
   }
 }
