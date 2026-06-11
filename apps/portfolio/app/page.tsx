@@ -8,6 +8,7 @@ const panels: PanelListItemProps[] = [
   {
     imageRef: "/panels/spacex2.png",
     dates: "2026",
+    type: "Internship",
     title: "SpaceX",
     description: "Engineered database migration pipelines for Starshield MVP",
     href: "https://www.spacex.com/starshield",
@@ -15,6 +16,7 @@ const panels: PanelListItemProps[] = [
   {
     imageRef: "/panels/apl.png",
     dates: "2025",
+    type: "Internship",
     title: "Johns Hopkins APL",
     description: "Developed UI features to support missile defense simulations",
     href: "https://www.jhuapl.edu/",
@@ -22,6 +24,7 @@ const panels: PanelListItemProps[] = [
   {
     imageRef: "/panels/aws.png",
     dates: "2025",
+    type: "Internship",
     title: "Amazon Web Services",
     description: "Built high-concurrency cache architectures for DynamoDB in Rust",
     href: "https://aws.amazon.com/dynamodb/",
@@ -29,6 +32,7 @@ const panels: PanelListItemProps[] = [
   {
     imageRef: "/panels/nps.png",
     dates: "2024",
+    type: "Internship",
     title: "Naval Postgraduate School",
     description: "Data analysis on maritime missile raid scenarios",
     href: "https://nps.edu/",

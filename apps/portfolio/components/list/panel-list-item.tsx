@@ -9,6 +9,7 @@ export interface PanelListItemProps {
   title: string;
   description: string;
   dates: string;
+  type?: string;
   href?: string;
   imageClassName?: string;
 }
@@ -18,6 +19,7 @@ export function PanelListItem({
   title,
   description,
   dates,
+  type,
   href,
   imageClassName,
 }: PanelListItemProps) {
@@ -25,11 +27,13 @@ export function PanelListItem({
     <div className="group grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div className="hidden flex-col lg:flex">
         <div className="text-muted-foreground">{dates}</div>
+        {type && <div className="text-muted-foreground/75 text-sm">{type}</div>}
       </div>
 
       <div className="order-2 min-w-0 sm:order-1">
-        <div className="order-1 flex text-sm lg:hidden">
+        <div className="order-1 flex flex-col text-sm lg:hidden">
           <span className="text-muted-foreground">{dates}</span>
+          {type && <span className="text-muted-foreground/75">{type}</span>}
         </div>
 
         {href ? (
